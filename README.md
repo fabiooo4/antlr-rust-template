@@ -5,15 +5,15 @@ generate all the code for a simple grammar to use in Rust.
 
 ## Usage
 
-1. Clone the repository
+1. Create a new repo with this template
 
 ```
-git clone https://github.com/fabiooo4/antlr-rust-template.git
+gh repo create --template fabiooo4/antlr4rust-template <repo-name>
 ```
 
-2. Download the antlr4 tool forked and patched to add the Rust target from
-   [here](https://github.com/rrevenantt/antlr4rust/releases/tag/antlr4-4.8-2-Rust0.3.0-beta)
-   and also any Java JDK
+2. Download required dependencies:
+   - [antlr4 fork with Rust target support](https://github.com/rrevenantt/antlr4rust/releases/tag/antlr4-4.8-2-Rust0.3.0-beta)
+   - Java JDK
 
 3. Add the path to the antlr4 jar file to the `ANTLR_JAR` environment variable
 
@@ -27,9 +27,9 @@ export ANTLR_JAR=/path/to/antlr4-4.8-2-SNAPSHOT-complete.jar
 cargo build
 ```
 
-## Change the grammar
+### Add new grammars
 
-To change grammars add them to the `grammars` folder and add the corresponding
+To add new grammars put them into the `grammars` folder and add the corresponding
 file name to the `build.rs` file. The generated modules will be placed in the `target`
 directory accessible by the `OUT_DIR` environment variable, so to use them
 you need to include them in the `src/parser.rs` module. For example:
